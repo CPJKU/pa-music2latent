@@ -117,5 +117,5 @@ def download_model():
     if not ospath.exists(lib_root + "/models/music2latent.pt"):
         print("Downloading model...")
         os.makedirs(lib_root + "/models", exist_ok=True)
-        _ = hf_hub_download(repo_id="SonyCSLParis/music2latent", filename="music2latent.pt", cache_dir=lib_root + "/models", local_dir=lib_root + "/models")
+        _ = hf_hub_download(repo_id="CPJKU/pa-audioic", filename="music2latent.pt", cache_dir=lib_root + "/models", local_dir=lib_root + "/models")
         print("Model was downloaded successfully!")

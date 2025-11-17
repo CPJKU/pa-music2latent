@@ -1,3 +1,26 @@
+# Perceptually Aligned Music2Latent
+
+This repository is a fork of [Music2Latent](https://github.com/sonyCSLParis/music2latent) created by Marco Pasini Queen Mary University of London, in partnership with Sony Computer Science Laboratories Paris, licensed under CC BY-NC 4.0.
+It includes model weights and the modifications of [Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders, Bjare et al., NeurIPS - AI for Music Workshop, 2025](https://openreview.net/forum?id=rXUKO0ysUy) and remains under the same CC BY-NC 4.0 license.
+
+
+
+If you use this project in your research, please cite the following paper:
+
+```bibtex
+@inproceedings{
+   bjare2025perceptually,
+   title={Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders},
+   author={Mathias Rose Bjare and Giorgia Cantisani and Marco Pasini and Stefan Lattner and Gerhard Widmer},
+   booktitle={NeurIPS - AI for Music Workshop},
+   year={2025},
+   url={https://openreview.net/forum?id=rXUKO0ysUy}
+}
+```
+and the original Music2Latent paper. 
+
+Original Music2Latent readme below.
+
 # Music2Latent
 Encode and decode audio samples to/from compressed representations! Useful for efficient generative modelling applications and for other downstream tasks.
 

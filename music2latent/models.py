@@ -284,6 +284,20 @@ class PositionalEmbedding(torch.nn.Module):
         x = torch.cat([torch.sin(x), torch.cos(x)], dim=-1)
         return x
 
+class LayerNormActivation(nn.Module):
+    def __init__(self, bottleneck_channels):
+        super().__init__()
+        l = torch.nn.LayerNorm(bottleneck_channels)
+        for param in l.parameters():
+            param.requires_grad = False
+        l.weight.data.fill_(0.06)
+        self.l = l
+    def forward(self, x):
+        x = x.permute(0,2,1)
+        x = self.l(x)
+        x = x.permute(0,2,1)
+        return x
+
 class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
@@ -328,8 +342,7 @@ class Encoder(nn.Module):
         self.norm_out = nn.GroupNorm(min(output_channels//4, 32), output_channels)
         self.activation_out = nn.SiLU()
         self.conv_out = nn.Conv1d(output_channels, bottleneck_channels, kernel_size=1, stride=1, padding='same')
-        self.activation_bottleneck = nn.Tanh()
-            
+        self.activation_bottleneck = LayerNormActivation(bottleneck_channels)
         self.down_layers = nn.ModuleList(down_layers)
 
 

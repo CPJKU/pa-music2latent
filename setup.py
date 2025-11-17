@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='music2latent',
-    version='0.1.6',
+    version='0.2.0',
     packages=find_packages(), 
     description='Encode and decode audio samples to/from compressed representations!',
     author='Sony Computer Science Laboratories Paris',
@@ -16,6 +16,6 @@ setup(
         'torch',
     ],
     license='CC BY-NC 4.0',
-    url='https://github.com/SonyCSLParis/music2latent',
+    url='https://github.com/CPJKU/pa-music2latent',
     keywords='audio speech music compression generative-model autoencoder diffusion consistency',
 )
